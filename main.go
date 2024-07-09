@@ -12,9 +12,10 @@ func main() {
 
 	hub := ws.NewHub()
 	wsHandler := ws.NewHandler(hub)
+	go hub.Run()
 
 	fmt.Println("hub created...")
 
 	router.Init(wsHandler)
-	router.Start("0.0.0.0:3005")
+	router.Start("0.0.0.0:8080")
 }

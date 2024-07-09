@@ -12,6 +12,7 @@ func Init(wsHandler *ws.Handler) {
 	r = gin.Default()
 
 	r.POST("/ws/createRoom", wsHandler.CreateRoom)
+	r.GET("/ws/joinRoom/:roomId", wsHandler.JoinRoom)
 }
 
 func Start(addr string) error {
