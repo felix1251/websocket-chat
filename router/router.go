@@ -11,10 +11,10 @@ var r *gin.Engine
 func Init(wsHandler *ws.Handler) {
 	r = gin.Default()
 
-	r.POST("/ws/createRoom", wsHandler.CreateRoom)
-	r.GET("/ws/joinRoom/:roomId", wsHandler.JoinRoom)
-	r.GET("/ws/getRooms", wsHandler.GetRooms)
-	r.GET("/ws/getClients/:roomId", wsHandler.GetClients)
+	r.POST("/ws/create_room", wsHandler.CreateRoom)
+	r.GET("/ws/join_room/:roomId", wsHandler.JoinRoom)
+	r.GET("/ws/get_rooms", wsHandler.GetRooms)
+	r.GET("/ws/get_clients/:roomId", wsHandler.GetClients)
 }
 
 func Start(addr string) error {
